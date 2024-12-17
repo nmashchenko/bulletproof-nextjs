@@ -1,9 +1,8 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { useUser } from '@/lib/auth';
+import { Trash } from 'lucide-react';
+import { toast } from 'sonner';
 
-import { useDeleteUser } from '../api/delete-user';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,9 +14,10 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { useUser } from '@/lib/auth';
 
-import { Trash } from 'lucide-react';
-import { toast } from 'sonner';
+import { useDeleteUser } from '../api/delete-user';
 
 type DeleteUserProps = {
   id: string;

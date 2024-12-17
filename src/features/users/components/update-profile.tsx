@@ -1,15 +1,11 @@
 'use client';
 
-import { Pen, Plus } from 'lucide-react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Plus } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
-import { useUser } from '@/lib/auth';
-
-import {
-  UpdateProfileInput,
-  updateProfileInputSchema,
-  useUpdateProfile,
-} from '../api/update-profile';
 import {
   Dialog,
   DialogContent,
@@ -25,11 +21,15 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from 'sonner';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useUser } from '@/lib/auth';
+
+import {
+  UpdateProfileInput,
+  updateProfileInputSchema,
+  useUpdateProfile,
+} from '../api/update-profile';
 
 export const UpdateProfile = () => {
   const user = useUser();

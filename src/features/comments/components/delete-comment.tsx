@@ -3,10 +3,6 @@
 import { Trash } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { Button } from '@/components/ui/button';
-
-import { useDeleteComment } from '../api/delete-comment';
-
 import {
   AlertDialog,
   AlertDialogTitle,
@@ -18,6 +14,9 @@ import {
   AlertDialogFooter,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+
+import { useDeleteComment } from '../api/delete-comment';
 
 type DeleteCommentProps = {
   id: string;
